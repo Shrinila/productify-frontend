@@ -1,0 +1,83 @@
+/* Full page background */
+.login-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      rgba(18, 9, 31, 0.75),
+      rgba(18, 9, 31, 0.75)
+    ),
+    url("../assets/login-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login card */
+.login-card {
+  background: #ffffff;
+  width: 380px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  /* 🔑 MOST IMPORTANT PART */
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* Text */
+.login-card h1 {
+  text-align: center;
+  color: #4c1d95;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Inputs */
+.login-card input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Button */
+.login-card button {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #6d28d9;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background: #5b21b6;
+}
+
+/* Footer */
+.footer-text {
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-text span {
+  color: #6d28d9;
+  cursor: pointer;
+}

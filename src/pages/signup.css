@@ -1,0 +1,130 @@
+/* ===== PAGE LAYOUT ===== */
+.signup-wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: linear-gradient(135deg, #1c1132, #2d1b49);
+  color: #e9d5ff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===== LEFT PANEL ===== */
+.sign-up {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.sidebar-logo span {
+  font-size: 28px;
+}
+
+.sidebar-logo-mark {
+  font-size: 12px;
+  color: #c4b5fd;
+}
+
+.page-title {
+  margin-top: 40px;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #c7d2fe;
+  max-width: 420px;
+}
+
+/* ===== RIGHT PANEL ===== */
+.auth-panel {
+  background: #0f0725;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-panel h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f5f3ff;
+}
+
+/* ===== FORM ===== */
+.field {
+  margin-bottom: 16px;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #ddd6fe;
+}
+
+.field-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #3f2a7a;
+  background: #1b1238;
+  color: #f5f3ff;
+  font-size: 14px;
+}
+
+.field-input::placeholder {
+  color: #a78bfa;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: #a78bfa;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: #1e0b36;
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .signup-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .sign-up {
+    display: none;
+  }
+
+  .auth-panel {
+    min-height: 100vh;
+  }
+}

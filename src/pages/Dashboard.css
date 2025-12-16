@@ -1,0 +1,181 @@
+/* ===== THEME VARIABLES ===== */
+:root {
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #c4b5fd;
+  --purple: #7c3aed;
+  --shadow: rgba(0,0,0,0.08);
+}
+
+body.dark {
+  --bg: #0f172a;
+  --card: #020617;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #7c3aed;
+  --shadow: rgba(0,0,0,0.6);
+}
+
+/* ===== LAYOUT ===== */
+.dashboard {
+  padding: 32px;
+  background: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.theme-btn {
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+/* ===== STATS ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 22px;
+  border: 2px solid var(--border);
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.stat-card span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.stat-card h2 {
+  font-size: 34px;
+  color: var(--purple);
+}
+
+/* ===== LOWER GRID ===== */
+.lower-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.2fr;
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 22px;
+  border: 2px solid var(--border);
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+.progress-bar {
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+}
+
+/* ===== PRIORITY ===== */
+.priority-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 30px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.priority-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.priority-bar div {
+  height: 100%;
+  background: var(--purple);
+}
+
+/* ===== STREAK ===== */
+.streak {
+  text-align: center;
+}
+
+.streak-number {
+  font-size: 52px;
+  font-weight: bold;
+  color: #f97316;
+}
+/* ===============================
+   FIX WHITE CARDS IN DARK MODE
+================================ */
+
+body.dark .card,
+body.dark .stat-card {
+  color: #111827; /* dark readable text */
+}
+
+body.dark .card h3,
+body.dark .stat-card h2,
+body.dark .stat-card span,
+body.dark .priority-row span,
+body.dark .card p {
+  color: #1f2937;
+}
+/* ============================= */
+/* Top stat cards – white theme */
+/* ============================= */
+
+.stat-card {
+  background: #ffffff;              /* WHITE background */
+  border: 2px solid #7c3aed;        /* Purple border */
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover polish */
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(124, 58, 237, 0.18);
+}
+
+/* Text inside top cards */
+.stat-card h4 {
+  color: #374151; /* dark gray */
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.stat-card .stat-value {
+  color: #7c3aed; /* purple number */
+  font-size: 32px;
+  font-weight: 800;
+}
+
+/* Icons */
+.stat-card svg {
+  color: #7c3aed;
+}
