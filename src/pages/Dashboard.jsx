@@ -4,7 +4,38 @@ import "./Dashboard.css";
 
 export default function Dashboard() {
   const userId = localStorage.getItem("userId");
+const getToday = () => new Date().toDateString();
 
+const calculateStreak = () => {
+  const lastDate = localStorage.getItem("lastActiveDate");
+  const streak = Number(localStorage.getItem("streakCount")) || 0;
+
+  const today = getToday();
+
+  if (!lastDate) {
+    localStorage.setItem("lastActiveDate", today);
+    localStorage.setItem("streakCount", 1);
+    return 1;
+  }
+
+  const diff =
+    (new Date(today) - new Date(lastDate)) / (1000 * 60 * 60 * 24);
+
+  if (diff === 1) {
+    const newStreak = streak + 1;
+    localStorage.setItem("streakCount", newStreak);
+    localStorage.setItem("lastActiveDate", today);
+    return newStreak;
+  }
+
+  if (diff === 0) {
+    return streak;
+  }
+
+  localStorage.setItem("streakCount", 1);
+  localStorage.setItem("lastActiveDate", today);
+  return 1;
+};
   const [tasks, setTasks] = useState([]);
   const [dark, setDark] = useState(false);
 
@@ -25,6 +56,12 @@ export default function Dashboard() {
   const inProgress = tasks.filter(t => t.status === "inprogress").length;
   const highPriority = tasks.filter(t => t.priority === "high").length;
   const completion = total ? Math.round((completed / total) * 100) : 0;
+  const [streak, setStreak] = useState(1);
+
+useEffect(() => {
+  setStreak(calculateStreak());
+}, []);
+
 
   return (
     <div className="dashboard">
@@ -64,7 +101,7 @@ export default function Dashboard() {
 
         <div className="card streak">
           <h3>🔥 Current Streak</h3>
-          <div className="streak-number">3</div>
+          <div className="streak-number">{streak}</div>
           <p>Days active</p>
         </div>
       </div>

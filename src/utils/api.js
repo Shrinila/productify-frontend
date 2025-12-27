@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000",  // ✔ no extra slash
+  baseURL: "https://productify-backend-2.onrender.com/",  // ✔ no extra slash
 });
 
 export default API;

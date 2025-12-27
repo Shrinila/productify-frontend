@@ -29,13 +29,18 @@ export default function Tasks() {
   };
 
   // Create a task
+
   const createTask = async () => {
     if (!form.text.trim()) return alert("Task title is required!");
 
     try {
       await API.post("/tasks", {
-        ...form,
-        userId,
+    userId,
+text: form.text,
+  description: form.description,
+  dueDate: form.dueDate,
+  priority: form.priority,   // ✅ THIS WAS MISSING
+  status: "todo",
       });
 
       setForm({ text: "", description: "", dueDate: "", priority: "medium" });
