@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./kanban.css";
+import "./Kanban.css";
 import api from "../utils/api";
 
 export default function Kanban() {
