@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./tasks.css";
+import "./Tasks.css";
 import API from "../utils/api"; // your axios instance
 
 export default function Tasks() {
