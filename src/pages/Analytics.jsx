@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./analytics.css";
+import "./Analytics.css";
 import API from "../utils/api";
 
 // Chart.js imports
